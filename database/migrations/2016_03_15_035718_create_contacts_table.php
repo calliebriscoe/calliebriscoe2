@@ -20,6 +20,8 @@ class CreateContactsTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('github')->nullable();
             $table->string('other_link')->nullable();
+            $table->text('description');
+            $table->boolean('seen')->default(false);
             $table->timestamps();
         });
     }
