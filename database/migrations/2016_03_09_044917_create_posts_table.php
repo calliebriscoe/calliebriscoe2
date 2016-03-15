@@ -15,10 +15,19 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integar('users_id')->unsigned();
+            $table->string('slug', 255)->unique();
             $table->string('title');
-            $table->text('description');
+            $table->text('summary');
+            $table->text('content');
+            $table->boolean('seen')->default(false);
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
+        Schema::table('posts', function(Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+});
     }
 
     /**
@@ -28,6 +37,9 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
+      Schema::table('posts', function(Blueprint $table) {
+          $table->dropForeign('posts_user_id_foreign');
+});
         Schema::drop('posts');
     }
 }
