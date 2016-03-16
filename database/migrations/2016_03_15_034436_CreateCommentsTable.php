@@ -12,11 +12,11 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
           $table->increments('id');
-          $table->integar('users_id')->unsigned();
-          $table->integar('posts_id')->unsigned()->nullable();
-          $table->integar('comments_id')->unsigned()->nullable();
+          $table->integer('users_id')->unsigned();
+          $table->integer('posts_id')->unsigned();
+          $table->integer('comments_id')->unsigned();
           $table->text('content');
           $table->boolean('seen')->default(false);
           $table->timestamps();
@@ -24,10 +24,14 @@ class CreateCommentsTable extends Migration
 
 
 		    Schema::table('comments', function(Blueprint $table) {
-			    $table->foreign('user_id')->references('id')->on('users')
+			    $table->foreign('users_id')
+                ->references('id')
+                ->on('users')
 						    ->onDelete('restrict')
 						    ->onUpdate('restrict');
-			    $table->foreign('post_id')->references('id')->on('posts')
+			    $table->foreign('posts_id')
+                ->references('id')
+                ->on('posts')
 						    ->onDelete('cascade')
 						    ->onUpdate('cascade');
 		    });
@@ -41,8 +45,8 @@ class CreateCommentsTable extends Migration
     public function down()
     {
           Schema::table('comments', function(Blueprint $table) {
-              $table->dropForeign('comments_user_id_foreign');
-              $table->dropForeign('comments_post_id_foreign');
+              $table->dropForeign('comments_users_id_foreign');
+              $table->dropForeign('comments_posts_id_foreign');
           });
           Schema::drop('comments');
     }
