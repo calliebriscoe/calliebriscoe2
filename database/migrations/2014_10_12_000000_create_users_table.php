@@ -17,13 +17,14 @@ class CreateUsersTable extends Migration
             $table->string('username', 30)->unique();
       			$table->string('email')->unique();
             $table->string('password', 60);
-            $table->integer('roles_id')->unsigned();
+            $table->integer('role_id')->unsigned();
             $table->boolean('seen')->default(false);
             $table->boolean('valid')->default(false);
             $table->boolean('confirmed')->default(false);
             $table->string('confirmation_code')->nullable();
-            $table->rememberToken();
+            $table->string('avatar');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

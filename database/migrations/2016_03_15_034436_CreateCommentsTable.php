@@ -14,8 +14,8 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('users_id')->unsigned();
-          $table->integer('posts_id')->unsigned();
+          $table->integer('user_id')->unsigned();
+          $table->integer('post_id')->unsigned();
           $table->integer('comments_id')->unsigned();
           $table->text('content');
           $table->boolean('seen')->default(false);
@@ -24,12 +24,12 @@ class CreateCommentsTable extends Migration
 
 
 		    Schema::table('comments', function(Blueprint $table) {
-			    $table->foreign('users_id')
+          $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
 						    ->onDelete('restrict')
 						    ->onUpdate('restrict');
-			    $table->foreign('posts_id')
+          $table->foreign('post_id')
                 ->references('id')
                 ->on('posts')
 						    ->onDelete('cascade')
@@ -45,9 +45,10 @@ class CreateCommentsTable extends Migration
     public function down()
     {
           Schema::table('comments', function(Blueprint $table) {
-              $table->dropForeign('comments_users_id_foreign');
-              $table->dropForeign('comments_posts_id_foreign');
+              $table->dropForeign('comments_user_id_foreign');
+              $table->dropForeign('comments_post_id_foreign');
           });
+
           Schema::drop('comments');
     }
 }
