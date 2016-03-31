@@ -6,9 +6,8 @@ use App\Jobs\Job;
 
 class ChangeLocale extends Job
 {
-
 	public $lang;
-
+	
     /**
      * Execute the job.
      *

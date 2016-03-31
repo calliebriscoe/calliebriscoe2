@@ -7,7 +7,6 @@ use App\Models\User;
 
 class PostPolicy
 {
-
     /**
      * Grant all abilities to administrator.
      *
@@ -33,4 +32,5 @@ class PostPolicy
     {
         return $user->id === $post->user_id;
     }
+
 }

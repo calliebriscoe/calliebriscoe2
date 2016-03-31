@@ -1,9 +1,6 @@
-<?php
+<?php namespace App\Services\Html;
 
-namespace App\Services\Html;
-
-class FormBuilder extends \Collective\Html\FormBuilder
-{
+class FormBuilder extends \Collective\Html\FormBuilder {
 
 	public function submit($value = null, $options = [])
 	{
@@ -24,7 +21,6 @@ class FormBuilder extends \Collective\Html\FormBuilder
 	public function control($type, $colonnes, $nom, $errors, $label = null, $valeur = null, $pop = null, $placeholder = '')
 	{
 		$attributes = ['class' => 'form-control', 'placeholder' => $placeholder];
-
 		return sprintf('
 			<div class="form-group %s %s">
 				%s
@@ -51,7 +47,7 @@ class FormBuilder extends \Collective\Html\FormBuilder
 			</div>',
 			parent::checkbox($name),
 			$label
-		);
+		);		
 	}
 
 	public function checkHorizontal($name, $label, $value)
@@ -66,7 +62,7 @@ class FormBuilder extends \Collective\Html\FormBuilder
 			</div>',
 			parent::checkbox($name, $value),
 			$label
-		);
+		);		
 	}
 
 	public function selection($nom, $list = [], $selected = null, $label = null)
@@ -80,4 +76,5 @@ class FormBuilder extends \Collective\Html\FormBuilder
 			parent::select($nom, $list, $selected, ['class' => 'form-control'])
 		);
 	}
+
 }

@@ -1,11 +1,8 @@
-<?php
-
-namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
-{
+class Role extends Model  {
 
 	/**
 	 * The database table used by the model.
@@ -19,8 +16,9 @@ class Role extends Model
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\hasMany
 	 */
-	public function users()
+	public function users() 
 	{
 	  return $this->hasMany('App\Models\User');
 	}
+
 }

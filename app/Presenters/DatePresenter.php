@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Presenters;
+<?php namespace App\Presenters;
 
 use Carbon\Carbon;
 
@@ -38,4 +36,5 @@ trait DatePresenter {
 	{
 		return Carbon::parse($date)->format(config('app.locale') == 'fr' ? 'd/m/Y' : 'm/d/Y');
 	}
+
 }

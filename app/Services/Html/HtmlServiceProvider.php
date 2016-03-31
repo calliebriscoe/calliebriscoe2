@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Services\Html;
+<?php namespace App\Services\Html;
 
 class HtmlServiceProvider extends \Collective\Html\HtmlServiceProvider {
 
@@ -17,4 +15,5 @@ class HtmlServiceProvider extends \Collective\Html\HtmlServiceProvider {
             return $form->setSessionStore($app['session.store']);
         });
 	}
+
 }

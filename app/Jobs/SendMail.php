@@ -4,9 +4,7 @@ namespace App\Jobs;
 
 use App\Jobs\Job;
 use App\Models\User;
-
 use Request;
-
 use Illuminate\Contracts\Mail\Mailer;
 
 class SendMail extends Job
@@ -38,18 +36,16 @@ class SendMail extends Job
      */
     public function handle(Mailer $mailer)
     {
-
         $data = [
             'title'  => trans('front/verify.email-title'),
             'intro'  => trans('front/verify.email-intro'),
             'link'   => trans('front/verify.email-link'),
             'confirmation_code' => $this->user->confirmation_code
         ];
-
+        
         $mailer->send('emails.auth.verify', $data, function($message) {
             $message->to($this->user->email, $this->user->username)
                     ->subject(trans('front/verify.email-title'));
-
         });
     }
 }

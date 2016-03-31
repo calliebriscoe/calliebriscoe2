@@ -1,48 +1,47 @@
-<?php
-
-namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Presenters\DatePresenter;
 
-class Post extends Model
-{
-    use DatePresenter;
+class Post extends Model  {
 
-    /**
-  	 * The database table used by the model.
-  	 *
-  	 * @var string
-  	 */
-  	protected $table = 'posts';
+	use DatePresenter;
 
-  	/**
-  	 * Get the user that owns the post.
-  	 *
-  	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
-  	 */
-  	public function user()
-  	{
-  		return $this->belongsTo('App\Models\User');
-  	}
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'posts';
 
-    /**
-     * Many to Many relation
-     *
-     * @return Illuminate\Database\Eloquent\Relations\belongToMany
-     */
-    public function tags()
-    {
-    	return $this->belongsToMany('App\Models\Tag');
-    }
+	/**
+	 * One to Many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function user() 
+	{
+		return $this->belongsTo('App\Models\User');
+	}
 
-  	/**
-  	 * Get the comments of the post.
-  	 *
-  	 * @return Illuminate\Database\Eloquent\Relations\hasMany
-  	 */
-  	public function comments()
-  	{
-  		return $this->hasMany('App\Models\Comment');
-  	}
+	/**
+	 * Many to Many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\belongToMany
+	 */
+	public function tags()
+	{
+		return $this->belongsToMany('App\Models\Tag');
+	} 
+
+	/**
+	 * One to Many relation
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\hasMany
+	 */
+	public function comments()
+	{
+		return $this->hasMany('App\Models\Comment');
+	}
+
 }

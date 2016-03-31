@@ -6,7 +6,6 @@ use App\Events\UserAccess as UserAccessEvent;
 
 class UserAccess extends ListenerBase
 {
-
     /**
      * Handle the event.
      *

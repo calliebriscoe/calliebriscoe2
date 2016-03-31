@@ -1,6 +1,7 @@
 <?php
 
 return [
+
 	/*
 	|--------------------------------------------------------------------------
 	| View Storage Paths
@@ -12,9 +13,9 @@ return [
 	|
 	*/
 
-  'paths' => [base_path('resources/views')],
+	'paths' => [base_path('resources/views')],
 
-  /*
+	/*
 	|--------------------------------------------------------------------------
 	| Compiled View Path
 	|--------------------------------------------------------------------------
@@ -23,8 +24,8 @@ return [
 	| stored for your application. Typically, this is within the storage
 	| directory. However, as usual, you are free to change this value.
 	|
-  */
+	*/
 
-  'compiled' => storage_path().'/framework/views',
+	'compiled' => storage_path().'/framework/views',
 
 ];

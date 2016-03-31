@@ -13,131 +13,132 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'local'),
+    'env' => env('APP_ENV', 'production'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Debug Mode
-    |--------------------------------------------------------------------------
-    |
-    | When your application is in debug mode, detailed error messages with
-    | stack traces will be shown on every error that occurs within your
-    | application. If disabled, a simple generic error page is shown.
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Application Debug Mode
+	|--------------------------------------------------------------------------
+	|
+	| When your application is in debug mode, detailed error messages with
+	| stack traces will be shown on every error that occurs within your
+	| application. If disabled, a simple generic error page is shown.
+	|
+	*/
 
-    'debug' => env('APP_DEBUG', false),
+	'debug' => env('APP_DEBUG', false),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application URL
-    |--------------------------------------------------------------------------
-    |
-    | This URL is used by the console to properly generate URLs when using
-    | the Artisan command line tool. You should set this to the root of
-    | your application so that it is used when running Artisan tasks.
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Application URL
+	|--------------------------------------------------------------------------
+	|
+	| This URL is used by the console to properly generate URLs when using
+	| the Artisan command line tool. You should set this to the root of
+	| your application so that it is used when running Artisan tasks.
+	|
+	*/
 
-    'url' => 'http://localhost',
+	'url' => 'http://localhost',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Timezone
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify the default timezone for your application, which
-    | will be used by the PHP date and date-time functions. We have gone
-    | ahead and set this to a sensible default for you out of the box.
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Application Timezone
+	|--------------------------------------------------------------------------
+	|
+	| Here you may specify the default timezone for your application, which
+	| will be used by the PHP date and date-time functions. We have gone
+	| ahead and set this to a sensible default for you out of the box.
+	|
+	*/
 
-    'timezone' => 'UTC',
+	'timezone' => 'UTC',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Locale Configuration
-    |--------------------------------------------------------------------------
-    |
-    | The application locale determines the default locale that will be used
-    | by the translation service provider. You are free to set this value
-    | to any of the locales which will be supported by the application.
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Application Locale Configuration
+	|--------------------------------------------------------------------------
+	|
+	| The application locale determines the default locale that will be used
+	| by the translation service provider. You are free to set this value
+	| to any of the locales which will be supported by the application.
+	|
+	*/
 
-    'locale' => 'en',
+	'locale' => 'en',
 
-  	/*
-  	|--------------------------------------------------------------------------
-  	| Application available Languages
-  	|--------------------------------------------------------------------------
-  	|
-  	| A list of available languages defined from their ISO Language Codes codes, see more: http://www.w3schools.com/tags/ref_language_codes.asp.
-  	| If the code isn't in the list, HomeController@language is set from fallback_locale value.
-  	! To set new language, pelase create a folder in /resources/lang/{ISO-CODE}, create a flag image in public/img/{ISO-CODE}-flang.png
-  	! and at least, add the ISO code in languages array.
-  	*/
-  	'languages' => ['en', 'fr', 'pt-BR'],
+	/*
+	|--------------------------------------------------------------------------
+	| Application available Languages
+	|--------------------------------------------------------------------------
+	|
+	| A list of available languages defined from their ISO Language Codes codes, see more: http://www.w3schools.com/tags/ref_language_codes.asp.
+	| If the code isn't in the list, HomeController@language is set from fallback_locale value.
+	! To set new language, pelase create a folder in /resources/lang/{ISO-CODE}, create a flag image in public/img/{ISO-CODE}-flang.png
+	! and at least, add the ISO code in languages array.
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Fallback Locale
-    |--------------------------------------------------------------------------
-    |
-    | The fallback locale determines the locale to use when the current one
-    | is not available. You may change the value to correspond to any of
-    | the language folders that are provided through your application.
-    |
-    */
+	'languages' => ['en', 'fr', 'pt-BR'],
 
-    'fallback_locale' => 'en',
+	/*
+	|--------------------------------------------------------------------------
+	| Application Fallback Locale
+	|--------------------------------------------------------------------------
+	|
+	| The fallback locale determines the locale to use when the current one
+	| is not available. You may change the value to correspond to any of
+	| the language folders that are provided through your application.
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | Encryption Key
-    |--------------------------------------------------------------------------
-    |
-    | This key is used by the Illuminate encrypter service and should be set
-    | to a random, 32 character string, otherwise these encrypted strings
-    | will not be safe. Please do this before deploying an application!
-    |
-    */
+	'fallback_locale' => 'en',
 
-    'key' => env('APP_KEY', 'SomeRandomStringSomeRandomString'),
+	/*
+	|--------------------------------------------------------------------------
+	| Encryption Key
+	|--------------------------------------------------------------------------
+	|
+	| This key is used by the Illuminate encrypter service and should be set
+	| to a random, 32 character string, otherwise these encrypted strings
+	| will not be safe. Please do this before deploying an application!
+	|
+	*/
 
-    'cipher' => 'AES-256-CBC',
+	'key' => env('APP_KEY', 'SomeRandomString'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Logging Configuration
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the log settings for your application. Out of
-    | the box, Laravel uses the Monolog PHP logging library. This gives
-    | you a variety of powerful log handlers / formatters to utilize.
-    |
-    | Available Settings: "single", "daily", "syslog", "errorlog"
-    |
-    */
+	'cipher' => 'AES-256-CBC',
 
-    'log' => env('APP_LOG', 'single'),
+	/*
+	|--------------------------------------------------------------------------
+	| Logging Configuration
+	|--------------------------------------------------------------------------
+	|
+	| Here you may configure the log settings for your application. Out of
+	| the box, Laravel uses the Monolog PHP logging library. This gives
+	| you a variety of powerful log handlers / formatters to utilize.
+	|
+	| Available Settings: "single", "daily", "syslog"
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | Autoloaded Service Providers
-    |--------------------------------------------------------------------------
-    |
-    | The service providers listed here will be automatically loaded on the
-    | request to your application. Feel free to add your own services to
-    | this array to grant expanded functionality to your applications.
-    |
-    */
+	'log' => 'single',
 
-    'providers' => [
+	/*
+	|--------------------------------------------------------------------------
+	| Autoloaded Service Providers
+	|--------------------------------------------------------------------------
+	|
+	| The service providers listed here will be automatically loaded on the
+	| request to your application. Feel free to add your own services to
+	| this array to grant expanded functionality to your applications.
+	|
+	*/
 
-        /*
-         * Laravel Framework Service Providers...
-         */
+	'providers' => [
+
+		/*
+		 * Laravel Framework Service Providers...
+		 */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -160,30 +161,34 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        App\Services\Html\HtmlServiceProvider::class,
-        Bestmomo\Filemanager\FilemanagerServiceProvider::class,
+		/*
+		 * Application Service Providers...
+		 */
+		App\Providers\AppServiceProvider::class,
+		App\Providers\AuthServiceProvider::class,
+		App\Providers\EventServiceProvider::class,
+		App\Providers\RouteServiceProvider::class,
+		App\Services\Html\HtmlServiceProvider::class,
+		Bestmomo\Filemanager\FilemanagerServiceProvider::class,
+    Intervention\Image\ImageServiceProvider::class,
+    Tsawler\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+    Intervention\Image\ImageServiceProvider::class.
+    Collective\Html\HtmlServiceProvider::class,
 
-    ],
+	],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Class Aliases
-    |--------------------------------------------------------------------------
-    |
-    | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Class Aliases
+	|--------------------------------------------------------------------------
+	|
+	| This array of class aliases will be registered when this application
+	| is started. However, feel free to register as many as you wish as
+	| the aliases are "lazy" loaded so they don't hinder performance.
+	|
+	*/
 
-    'aliases' => [
+	'aliases' => [
 
         'App'       => Illuminate\Support\Facades\App::class,
         'Artisan'   => Illuminate\Support\Facades\Artisan::class,
@@ -198,7 +203,6 @@ return [
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
-        'Gate'      => Illuminate\Support\Facades\Gate::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
@@ -218,9 +222,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-                      'Form'		=> Collective\Html\FormFacade::class,
-    		              'HTML'		=> Collective\Html\HtmlFacade::class,
+		    'Form'		  => Collective\Html\FormFacade::class,
+		    'HTML'		  => Collective\Html\HtmlFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
 
-    ],
+	],
 
 ];

@@ -14,12 +14,10 @@ class HomeController extends Controller
 	 */
 	public function index()
 	{
-
-		    return view('front.index');
-
+		return view('front.index');
 	}
 
-  /**
+	/**
 	 * Change language.
 	 *
 	 * @param  App\Jobs\ChangeLocaleCommand $changeLocale
@@ -27,17 +25,13 @@ class HomeController extends Controller
 	 * @return Response
 	 */
 	public function language( $lang,
+		ChangeLocale $changeLocale)
+	{		
+		$lang = in_array($lang, config('app.languages')) ? $lang : config('app.fallback_locale');
+		$changeLocale->lang = $lang;
+		$this->dispatch($changeLocale);
 
-  	    ChangeLocale $changeLocale)
-
-  {
-
-      	$lang = in_array($lang, config('app.languages')) ? $lang : config('app.fallback_locale');
-    		$changeLocale->lang = $lang;
-    		$this->dispatch($changeLocale);
-
-        return redirect()->back();
-
-  }
+		return redirect()->back();
+	}
 
 }

@@ -6,7 +6,6 @@ use Illuminate\Auth\Events\Logout;
 
 class LogoutSuccess extends ListenerBase
 {
-
     /**
      * Handle the event.
      *
